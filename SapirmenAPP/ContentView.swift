@@ -9,13 +9,13 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+        NavigationView{
+            List(superKahramanDizisi) { superKahramanX in
+                NavigationLink(
+                    destination: DetayView(secilenKahraman: superKahramanX),
+                    label: {Text(superKahramanX.isim)}
+                )}.navigationTitle(Text(" Kahramanlar A.Ş."))
         }
-        .padding()
     }
 }
 
